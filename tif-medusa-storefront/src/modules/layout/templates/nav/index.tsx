@@ -14,10 +14,10 @@ import WishlistButton from "@modules/layout/components/wishlist-button"
 
 export default async function Nav() {
   const [regions, locales, currentLocale, categories] = await Promise.all([
-    listRegions().then((regions: StoreRegion[]) => regions),
-    listLocales(),
-    getLocale(),
-    listCategories(),
+    listRegions().catch(() => []), 
+    listLocales().catch(() => []),
+    getLocale().catch(() => "en-US"),
+    listCategories().catch(() => []),
   ])
 
   const topLevelCategories = categories?.filter(
