@@ -8,8 +8,8 @@ import MedusaCTA from "@modules/layout/components/medusa-cta"
 export default async function Footer() {
   const { collections } = await listCollections({
     fields: "*products",
-  })
-  const productCategories = await listCategories()
+  }).catch(() => ({ collections: [] }))
+  const productCategories = await listCategories().catch(() => [])
 
   return (
     <footer className="border-t border-gray-100 w-full bg-slate-50/50 pt-24 pb-12 shadow-[0_-1px_3px_0_rgba(0,0,0,0.02)]">
