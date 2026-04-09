@@ -1,4 +1,6 @@
 import { Metadata } from "next"
+
+export const dynamic = "force-dynamic"
 import { notFound } from "next/navigation"
 import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"

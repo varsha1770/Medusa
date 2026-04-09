@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 
+export const dynamic = "force-dynamic"
+
 import NextCommerceHome from "@modules/home/components/nextcommerce"
 
 export const metadata: Metadata = {
