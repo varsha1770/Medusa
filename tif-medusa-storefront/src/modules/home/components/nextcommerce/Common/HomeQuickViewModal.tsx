@@ -96,6 +96,9 @@ export default function HomeQuickViewModal({
       title: item.title,
       thumbnail: item.imgs?.thumbnails[0] || null,
       price: `₹${item.discountedPrice}`,
+      amount: item.discountedPrice || item.price,
+      currency_code: "INR",
+      quantity: 1,
       createdAt: new Date().toISOString(),
     };
     toggleItem(wishlistItem);
