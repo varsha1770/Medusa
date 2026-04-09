@@ -469,5 +469,5 @@ export async function listCartOptions() {
     next,
     headers,
     cache: "force-cache",
-  })
+  }).catch(() => ({ shipping_options: [] }))
 }
