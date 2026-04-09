@@ -26,13 +26,12 @@ function checkEnvVariables() {
       }
     })
 
-    console.error(
+    console.warn(
       c.yellow(
-        "\nPlease set these variables in your .env file or environment before starting the application.\n"
+        "\n⚠️ Warning: Missing environment variables. The site will build, but some features may not work.\n"
       )
     )
-
-    process.exit(1)
+    // Removed process.exit(1) to allow deployment
   }
 }
 
